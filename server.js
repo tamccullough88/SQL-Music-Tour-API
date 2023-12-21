@@ -11,7 +11,13 @@ app.use(express.urlencoded({ extended: false }))
 
 //Sequelize Connection
 
-const sequelize = new Sequelize(process.env.PG_URI)
+const sequelize = new Sequelize({
+    storage: process.env.PG_URI,
+    dialect: 'postgres',
+    username: 'postgres',
+    password: '@Beast-boy1988!'
+})
+
 
 
 try {
