@@ -1,4 +1,3 @@
-// DEPENDENCIES
 'use strict'
 const {
   Model
@@ -20,21 +19,25 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true
     },
-    name: {
+    event_name: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    date: {
+    event_date: {
       type: DataTypes.DATE,
+      allowNull: false
+    },
+    event_location: {
+      type: DataTypes.STRING,
       allowNull: false
     },
     start_time: {
       type: DataTypes.DATE,
-      allowNull: true
+      allowNull: false
     },
     end_time: {
       type: DataTypes.DATE,
-      allowNull: true
+      allowNull: false
     }
   }, {
     sequelize,

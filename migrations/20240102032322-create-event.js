@@ -9,12 +9,16 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      event_name: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      date: {
+      event_date: {
         type: Sequelize.DATE,
+        allowNull: false
+      },
+      event_location: {
+        type: Sequelize.STRING,
         allowNull: false
       },
       start_time: {
@@ -25,7 +29,7 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false
       }
-    })
+    });
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('events');
