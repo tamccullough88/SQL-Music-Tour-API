@@ -13,19 +13,19 @@ module.exports = (sequelize, DataTypes) => {
       // band
       SetTime.belongsTo(Band, {
         foreignKey: 'band_id',
-        as: 'band'
+        as: 'bands'
       })
 
       //event
       SetTime.belongsTo(Event, {
         foreignKey: 'event_id',
-        as: 'event'
+        as: 'events'
       })
 
       //stage
       SetTime.belongsTo(Stage, {
         foreignKey: 'stage_id',
-        as: 'stage'
+        as: 'stages'
       })
 
 
@@ -61,7 +61,7 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'SetTime',
     tableName: 'set_times',
-    timestamps: false
+
   })
   return SetTime
 }

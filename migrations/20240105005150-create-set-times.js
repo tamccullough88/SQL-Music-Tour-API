@@ -7,7 +7,8 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false
       },
       event_id: {
         type: Sequelize.INTEGER,
@@ -28,10 +29,10 @@ module.exports = {
       end_time: {
         type: Sequelize.DATE,
         allowNull: false
-      }
+      },
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('SetTimes');
+    await queryInterface.dropTable('set_times');
   }
 };
